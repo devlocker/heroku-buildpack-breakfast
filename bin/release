@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cat <<EOF
+---
+addons:
+  []
+default_process_types:
+  web: bin/rails server -p $PORT -e $RAILS_ENV
+EOF
