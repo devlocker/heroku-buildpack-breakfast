@@ -86,7 +86,7 @@ install_and_cache_npm_deps() {
   PATH=$breakfast_dir/node_modules/.bin:$PATH
 }
 
-compile() {
+build_assets() {
   cd $breakfast_dir
 
   bin/rake breakfast:assets:build_production
@@ -102,7 +102,6 @@ cache_versions() {
 write_profile() {
   info "Creating runtime environment"
   mkdir -p $build_dir/.profile.d
-  local export_line="export PATH=\"\$HOME/.heroku/node/bin:\$HOME/bin:\$HOME/$breakfast_relative_path/node_modules/.bin:\$PATH\"
-                     export RAILS_ENV=${RAILS_ENV}"
+  local export_line="export PATH=\"\$HOME/.heroku/node/bin:\$HOME/bin:\$HOME/$breakfast_relative_path/node_modules/.bin:\$PATH\""
   echo $export_line >> $build_dir/.profile.d/breakfast_static_buildpack_paths.sh
 }
