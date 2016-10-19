@@ -89,7 +89,7 @@ install_and_cache_npm_deps() {
 compile() {
   cd $breakfast_dir
 
-  bin/rake breakfast:assets:production_build
+  bin/rake breakfast:assets:build_production
   bin/rake breakfast:assets:digest
 }
 
