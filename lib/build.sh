@@ -102,6 +102,7 @@ cache_versions() {
 write_profile() {
   info "Creating runtime environment"
   mkdir -p $build_dir/.profile.d
-  local export_line="export PATH=\"\$HOME/.heroku/node/bin:\$HOME/bin:\$HOME/$breakfast_relative_path/node_modules/.bin:\$PATH\""
+  local export_line="export PATH=\"\$HOME/.heroku/node/bin:\$HOME/bin:\$HOME/$breakfast_relative_path/node_modules/.bin:\$PATH\"
+                     export RAILS_ENV=${RAILS_ENV}"
   echo $export_line >> $build_dir/.profile.d/breakfast_static_buildpack_paths.sh
 }

@@ -44,3 +44,15 @@ load_config() {
   info "Will export the following config vars:"
   info "* Config vars ${config_vars_to_export[*]}"
 }
+
+export_rails_env() {
+ if [ -z "${RAILS_ENV}" ]; then
+	 if [ -d $env_dir ] && [ -f $env_dir/RAILS_ENV ]; then
+		 export RAILS_ENV=$(cat $env_dir/RAILS_ENV)
+	 else
+		 export RAILS_ENV=production
+	 fi
+ fi
+
+ info "* RAILS_ENV=${RAILS_ENV}"
+}
