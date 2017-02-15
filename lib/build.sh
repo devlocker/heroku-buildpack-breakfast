@@ -89,8 +89,8 @@ install_and_cache_npm_deps() {
 build_assets() {
   cd $breakfast_dir
 
-  bin/rake breakfast:assets:build_production
-  bin/rake breakfast:assets:digest
+  bundle exec rake breakfast:assets:build_production
+  bundle exec rake breakfast:assets:digest
 }
 
 cache_versions() {

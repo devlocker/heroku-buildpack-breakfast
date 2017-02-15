@@ -25,6 +25,7 @@ source ${build_pack_dir}/lib/build.sh
 head "Loading configuration and environment"
 load_previous_npm_node_versions
 load_config
+export_env_vars
 export_rails_env
 
 cached_node=$cache_dir/node-v$node_version-linux-x64.tar.gz
