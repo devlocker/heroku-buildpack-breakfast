@@ -22,7 +22,7 @@ This buildpack takes care of
 heroku apps:create my_heroku_app
 
 # Set and add the buildpacks for your Heroku app
-heroku buildpacks:set https://github.com/devlocker/heroku-buildpack-breakfast
+heroku buildpacks:add https://github.com/devlocker/heroku-buildpack-breakfast
 
 # Deploy
 git push heroku master
